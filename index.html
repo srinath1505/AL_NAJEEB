@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AL NAJEEB COSMETICS TRADING L.L.C — Wholesale Product Catalogue</title>
+  <meta name="description" content="Wholesale catalogue of quality personal care, healthcare and beauty products. Search cash & credit prices, offers and availability, then enquire on WhatsApp." />
+  <link rel="preconnect" href="#" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="assets/img/logo.png" />
+</head>
+<body>
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <img id="brandLogo" class="brand-logo" alt="" hidden />
+        <span class="brand-wordmark">
+          <span class="brand-name" id="brandName">AL NAJEEB</span>
+          <span class="brand-sub">COSMETICS TRADING L.L.C</span>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#catalogue">Products</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-wa header-wa" id="headerWa" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.489-.917z" fill="currentColor"/></svg>
+          <span>WhatsApp</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Wholesale Distribution · UAE</p>
+        <h1 class="hero-title" id="heroTitle">AL NAJEEB COSMETICS TRADING L.L.C</h1>
+        <p class="hero-tag" id="heroTag">Your Trusted Partner for Quality Personal Care, Healthcare &amp; Beauty Products</p>
+        <div class="hero-actions">
+          <a href="#catalogue" class="btn btn-primary btn-lg">Explore Products</a>
+          <a href="#about" class="btn btn-ghost btn-lg">About the Firm</a>
+        </div>
+        <ul class="hero-stats" id="heroStats"><!-- filled by JS --></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ABOUT CAROUSEL ============================ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="carousel" id="carousel">
+        <div class="carousel-track" id="carouselTrack"><!-- slides injected --></div>
+        <button class="carousel-arrow prev" id="carPrev" aria-label="Previous slide">&#8249;</button>
+        <button class="carousel-arrow next" id="carNext" aria-label="Next slide">&#8250;</button>
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Slides"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CATALOGUE ============================ -->
+  <section class="catalogue" id="catalogue">
+    <div class="container">
+      <header class="section-head">
+        <h2>Our Product Catalogue</h2>
+        <p class="section-sub">Search hundreds of products across leading brands. Cash &amp; credit pricing, box offers and live stock.</p>
+      </header>
+
+      <!-- toolbar: search + sort + mobile filter button -->
+      <div class="toolbar" id="toolbar">
+        <div class="search">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" fill="currentColor"/></svg>
+          <input id="searchInput" type="search" placeholder="Search products, brands or sizes…" autocomplete="off" aria-label="Search products" />
+          <button id="searchClear" class="search-clear" aria-label="Clear search" hidden>&times;</button>
+        </div>
+        <div class="toolbar-right">
+          <label class="sort">
+            <span class="sr-only">Sort</span>
+            <select id="sortSelect" aria-label="Sort products">
+              <option value="featured">Sort: Featured</option>
+              <option value="name-asc">Name: A → Z</option>
+              <option value="price-asc">Price: Low → High</option>
+              <option value="price-desc">Price: High → Low</option>
+            </select>
+          </label>
+          <button class="btn btn-outline filter-toggle" id="filterToggle" aria-expanded="false">
+            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" fill="currentColor"/></svg>
+            Filters <span class="filter-count" id="filterCount" hidden>0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- category chips -->
+      <div class="chips" id="categoryChips" role="tablist" aria-label="Categories"></div>
+
+      <div class="catalogue-body">
+        <!-- filters (sidebar on desktop, bottom-sheet on mobile) -->
+        <aside class="filters" id="filters" aria-label="Filters">
+          <div class="filters-head">
+            <h3>Filters</h3>
+            <button class="filters-close" id="filtersClose" aria-label="Close filters">&times;</button>
+          </div>
+
+          <div class="filter-group">
+            <h4>Availability</h4>
+            <div class="segmented" id="availSeg" role="group">
+              <button data-avail="all" class="active">All</button>
+              <button data-avail="in">In stock</button>
+              <button data-avail="out">Out of stock</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Offers</h4>
+            <label class="check-inline"><input type="checkbox" id="offersOnly" /> <span>Show only <strong>12+1</strong> offers</span></label>
+          </div>
+
+          <div class="filter-group">
+            <h4>Cash price (AED)</h4>
+            <div class="segmented wrap" id="priceSeg" role="group">
+              <button data-min="0" data-max="100000" class="active">Any</button>
+              <button data-min="0" data-max="10">0–10</button>
+              <button data-min="10" data-max="25">10–25</button>
+              <button data-min="25" data-max="50">25–50</button>
+              <button data-min="50" data-max="100000">50+</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Brand</h4>
+            <div class="brand-box">
+              <input type="search" id="brandSearch" placeholder="Find a brand…" aria-label="Search brands" />
+              <div class="brand-list" id="brandList"></div>
+            </div>
+          </div>
+
+          <div class="filters-actions">
+            <button class="btn btn-outline btn-block" id="clearFilters">Clear all filters</button>
+            <button class="btn btn-primary btn-block apply-mobile" id="applyFilters">Show results</button>
+          </div>
+        </aside>
+
+        <!-- results -->
+        <div class="results">
+          <div class="results-meta">
+            <span id="resultsCount">Loading…</span>
+            <div class="active-filters" id="activeFilters"></div>
+          </div>
+          <div class="grid" id="productGrid" aria-live="polite"></div>
+          <div id="loadMoreSentinel" class="load-sentinel"></div>
+          <div class="empty" id="emptyState" hidden>
+            <p>No products match your filters.</p>
+            <button class="btn btn-outline" id="emptyClear">Clear filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  </section>
+
+  <!-- ============================ CONTACT ============================ -->
+  <section class="contact-band" id="contact">
+    <div class="container contact-inner">
+      <div>
+        <h2>Need pricing or bulk orders?</h2>
+        <p>Send us your list on WhatsApp and our team will confirm availability, offers and delivery.</p>
+      </div>
+      <a class="btn btn-wa btn-lg" id="contactWa" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.489-.917z" fill="currentColor"/></svg>
+        Enquire on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-about">
+        <span class="brand-name" id="footerName">AL NAJEEB</span>
+        <p class="footer-full" id="footerFull">AL NAJEEB COSMETICS TRADING L.L.C</p>
+        <p class="footer-tag" id="footerTag"></p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#about">About</a>
+        <a href="#catalogue">Product Catalogue</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a id="footWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+        <a id="footPhone" href="#">Phone</a>
+        <a id="footEmail" href="#">Email</a>
+      </div>
+      <div class="footer-col">
+        <h4>Business</h4>
+        <p id="footAddress" class="footer-line"></p>
+        <p id="footHours" class="footer-line"></p>
+        <div class="footer-social" id="footSocial"></div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span id="copyright"></span>
+    </div>
+  </footer>
+
+  <!-- ============================ PRODUCT MODAL ============================ -->
+  <div class="modal" id="productModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="document">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-media">
+          <img id="modalImg" alt="" />
+          <div class="modal-badges" id="modalBadges"></div>
+        </div>
+        <div class="modal-info">
+          <p class="modal-brand" id="modalBrand"></p>
+          <h3 class="modal-title" id="modalTitle"></h3>
+          <p class="modal-cat" id="modalCat"></p>
+          <div class="modal-avail" id="modalAvail"></div>
+          <div class="variants" id="modalVariants"></div>
+          <div class="modal-actions">
+            <a class="btn btn-wa btn-block" id="modalWa" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.489-.917z" fill="currentColor"/></svg>
+              Enquire on WhatsApp
+            </a>
+            <a class="btn btn-outline" id="modalCall" href="#">Call</a>
+          </div>
+          <p class="modal-note">Prices are per unit in AED and may change. Please confirm final pricing &amp; availability on enquiry.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- data + config + app -->
+  <script src="site-config.js"></script>
+  <script src="data/products.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
